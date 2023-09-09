@@ -1,5 +1,4 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import type { CollectionEntry } from "astro:content";
 import { resolveImage } from "~/content/showcase/_resolveImage.js";
 
@@ -9,20 +8,20 @@ export interface Props {
 
 const { site } = Astro.props;
 const image = await resolveImage(site);
+import { Image } from 'astro:assets'
 const widths = [450, 800];
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
+<!-- TODO: migrate to https://docs.astro.build/de/guides/images/#generating-images-with-getimage, widths={widths},       aspectRatio="16:9" was used -->
 <a class="group aspect-video hover:!text-default" href={site.data.url}>
   <figure class="relative h-full w-full overflow-hidden">
-    <Picture
+   <!-- TODO: Migrate, LocalImageUsedWrongly: `Image`'s and `getImage`'s `src` parameter must be an imported image or an URL, it cannot be a filepath. Received `/@fs/Users/admin/webserver/astro-landing-page-spline-viewer-demo/src/content/showcase/_images/firebase-blog.png?origWidth=1585&origHeight=900&origFormat=png`.  --> <!-- <Image
       class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
       src={image.src}
-      widths={widths}
       sizes={sizes}
-      aspectRatio="16:9"
       alt={`A screenshot of ${site.data.url}`}
-    />
+    /> -->
     <figcaption class="absolute inset-0">
       <div
         class="flex h-full flex-col items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"

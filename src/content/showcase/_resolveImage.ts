@@ -1,5 +1,6 @@
 // source: https://github.com/withastro/astro.build/blob/a30f075b315e20f44801cd454a8f915d0b1f8ee1/src/content/showcase/_resolveImage.ts
 
+// TODO: migrate, astro image was removed
 import type { ImageMetadata } from "@astrojs/image/dist/vite-plugin-astro-image.js";
 import type { CollectionEntry } from "astro:content";
 
