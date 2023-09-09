@@ -10,9 +10,10 @@ Built with [mhyfritz/astro-landing-page](https://github.com/mhyfritz/astro-landi
 
 - [ ] Resize event is not triggered in grid - how can I trigger it manually? 
 - [ ] How to import Web Component `<spline-viewer>` from node_modules? ([discord question](https://discord.com/channels/830184174198718474/1150020817019744307/1150020817019744307))
-- [ ] What about GDPR of spline viewer? What data is collected? 
 - [ ] Try out scroll, look at, etc. https://viewer.spline.design/
-
+- [ ] What about GDPR of spline viewer? What data is collected? Can export be self hosted?
+  - Can we just use the normal exported spline code file in spline-viewer?
+  - Or just use vanillajs runtime https://docs.spline.design/77c32288501a479fa8bc5e787f1e0878?
 
 ## Commands
 
