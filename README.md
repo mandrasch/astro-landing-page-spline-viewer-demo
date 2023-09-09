@@ -1,22 +1,16 @@
-# Astro Landing Page
+# Astro Spline Viewer Demo
 
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+- Planet example from https://app.spline.design/library
+- imported via https://viewer.spline.design/
+  - https://www.npmjs.com/package/@splinetool/viewer
 
-> An Astro + Tailwind CSS example/template for landing pages.
+## TODOs
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
+- [ ] Resize event is not triggered in grid - how can I trigger it manually? 
+- [ ] How to import Web Component `<spline-viewer>` from node_modules? ([discord question](https://discord.com/channels/830184174198718474/1150020817019744307/1150020817019744307))
+- [ ] What about GDPR of spline viewer? What data is collected? 
+- [ ] Try out scroll, look at, etc. https://viewer.spline.design/
 
-## Features
-
-- 💨 Tailwind CSS for styling
-- 🎨 Themeable
-  - CSS variables are defined in `src/styles/theme.css` and mapped to Tailwind classes (`tailwind.config.cjs`)
-- 🌙 Dark mode
-- 📱 Responsive (layout, images, typography)
-- ♿ Accessible (as measured by https://web.dev/measure/)
-- 🔎 SEO-enabled (as measured by https://web.dev/measure/)
-- 🔗 Open Graph tags for social media sharing
-- 💅 [Prettier](https://prettier.io/) setup for both [Astro](https://github.com/withastro/prettier-plugin-astro) and [Tailwind](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 
 ## Commands
 
@@ -32,6 +26,8 @@
 | `npm run clean`        | Remove `node_modules` and build output            |
 
 ## Credits
+
+Built with [mhyfritz](https://github.com/mhyfritz/astro-landing-page) (MIT license)
 
 - astronaut image
   - source: https://github.com/withastro/astro-og-image; note: this repo is not available anymore

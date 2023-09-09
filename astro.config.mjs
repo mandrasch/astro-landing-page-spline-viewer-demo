@@ -3,7 +3,10 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://mandrasch.github.io/",
+  // for gh pages build:
+  // TODO: set it via .env dynamically?
+  base: '/astro-landing-page-spline-viewer-demo',
   integrations: [
     tailwind(),
   ],
@@ -12,4 +15,5 @@ export default defineConfig({
       external: ["svgo"],
     },
   },
+ 
 });

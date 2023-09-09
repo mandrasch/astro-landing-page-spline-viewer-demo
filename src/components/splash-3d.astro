@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+import astronautImage from "~/assets/astronaut.png";
+import HeroImage from "~/components/hero-image.astro";
+import Starfield from "~/components/starfield.astro";
+import GitHubCorner from "./github-corner.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<section class="relative h-full bg-transparent">
+  <Starfield />
+  <GitHubCorner />
+  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
+    <HeroImage />
+  </div>
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h2
+      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <Icon name="logomark" class="h-24 text-white md:h-32" />
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+      >
+        Build fast
+        <br /> websites,
+        <br /> faster.
+      </div>
+    </h2>
+<!-- TODO: how to re-render on resize?   -->
+    <div
+      id="planet"
+      class=" flex max-h-[50vh] max-w-full w-full md:max-h-full self-start sm:self-auto sm:justify-self-start md:h-2/3 md:max-w-[515px]"
+    >
+      <!-- TODO: import Web Component from npm package, already installed via https://www.npmjs.com/package/@splinetool/viewer -->
+      <!-- Use "perspective" for your scene! -->
+      <script
+        type="module"
+        src="https://unpkg.com/@splinetool/viewer@0.9.443/build/spline-viewer.js"
+      ></script>
+      <spline-viewer
+        url="https://prod.spline.design/8tO9NQOC8Shteqek/scene.splinecode"
+        background="transparent"
+        events-target="local"></spline-viewer>
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #planet {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #planet {
+      @apply animate-none;
+    }
+
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>
