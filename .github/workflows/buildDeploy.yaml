@@ -20,17 +20,9 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-      - name: Setup Node LTS
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18' # currently lts
-
-      # NodeJS
-      - name: Install and Build 🔧
-        run: |
-          npm ci
-          npm run build
-
+      # https://github.com/withastro/action
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v0
   deploy:
     needs: build
     runs-on: ubuntu-latest
