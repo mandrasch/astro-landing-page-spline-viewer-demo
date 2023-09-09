@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node LTS
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts' # currently v18
+          node-version: '18' # currently lts
 
       # NodeJS
       - name: Install and Build 🔧
